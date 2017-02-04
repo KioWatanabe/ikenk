@@ -1,0 +1,25 @@
+<section id="top_index">
+  <div class="row">
+
+      <div class="col-md-6 col-xs-12 hidden-sm hidden-xs ">
+      	<%= embedded_svg("pc.svg", :class => "img-responsive pc") %>
+
+      </div><!--/.col-md-6 col-xs-12-->
+
+      <div class="col-md-6 col-xs-12 right">
+
+      	<h1><%= embedded_svg("ikenk_top.svg", class: "img-responsive ikenk") %></h1>
+				<h2>作品を共有して、意見を言おう</h2>
+
+				<%= embedded_svg("pc.svg", :class => "img-responsive sp_ikenk visible-sm visible-xs") %>
+
+				<div class="btn_area">
+					<%= link_to '新規登録', '/users/sign_up', :class => 'button sign_up' %>
+					<%= link_to 'ログイン', '/users/sign_in', :class => 'button sign_in' %>
+				</div>
+
+
+      </div><!--/.col-md-6 col-xs-12-->
+
+  </div><!--/.row-->
+</section>

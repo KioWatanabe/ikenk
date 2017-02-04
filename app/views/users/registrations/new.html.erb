@@ -1,0 +1,62 @@
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+<!--   <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%=f.label :image,"ユーザー画像" %>
+    <%= f.file_field :user_image %>
+  </div>
+
+  
+
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div> -->
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+        <div id="logbox">
+          <form id="signup" method="post" action="/signup">
+            <h1>アカウント作成</h1>
+            <%= f.text_field :username, autofocus: true, :placeholder => "ユーザー名を入力してください", :class => "input pass" %>
+            <!-- <input name="user[name]" type="text" placeholder="ユーザー名を決めてください" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required" class="input pass"/> -->
+            <%= f.file_field :user_image,  :class => "input pass" %>
+            <%= f.email_field :email, autofocus: true, required: true, :placeholder => "メールアドレスを入力してください", :class => "input pass" %>
+            <!-- <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass"/> -->
+            <%= f.password_field :password, autocomplete: "off", required: true, :placeholder => "パスワードを入力してください (6文字以上)", :class => "input pass" %></%>
+            <!-- <input name="user[password2]" type="password" placeholder="Confirm password" required="required" class="input pass"/> -->
+             <%= f.password_field :password_confirmation, autocomplete: "off", required: true, :placeholder => "パスワードをもう一度入力してください", :class => "input pass" %>
+    <!--         <input type="submit" value="Sign me up!" class="inputButton"/> -->
+            <%= f.submit "新規作成する", :class => "inputButton" %>
+            <div class="text-center">
+                 すでにアカウントを持っている方は？ <%= link_to 'ログイン', '/users/sign_in' %>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+

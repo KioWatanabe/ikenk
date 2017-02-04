@@ -1,0 +1,124 @@
+<p id="notice"><%= notice %></p>
+
+    <div class="card">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6">
+            
+            <div class="preview-pic tab-content">
+              <div class="tab-pane active" id="pic-1"><%= image_tag(@photo.image_url) if @photo.image.present? %></div>
+              <div class="tab-pane" id="pic-2"><%= image_tag(@photo.image_url) if @photo.image.present? %></div>
+              <div class="tab-pane" id="pic-3"><%= image_tag(@photo.image_url) if @photo.image.present? %></div>
+              <div class="tab-pane" id="pic-4"><%= image_tag(@photo.image_url) if @photo.image.present? %></div>
+              <div class="tab-pane" id="pic-5"><%= image_tag(@photo.image_url) if @photo.image.present? %></div>
+            </div>
+            <ul class="preview-thumbnail nav nav-tabs">
+              <li class="active"><a data-target="#pic-1" data-toggle="tab"><%= image_tag(@photo.image_url) if @photo.image.present? %></a></li>
+              <li><a data-target="#pic-2" data-toggle="tab"><%= image_tag(@photo.image_url) if @photo.image.present? %></a></li>
+              <li><a data-target="#pic-3" data-toggle="tab"><%= image_tag(@photo.image_url) if @photo.image.present? %></a></li>
+              <li><a data-target="#pic-4" data-toggle="tab"><%= image_tag(@photo.image_url) if @photo.image.present? %></a></li>
+              <li><a data-target="#pic-5" data-toggle="tab"><%= image_tag(@photo.image_url) if @photo.image.present? %></a></li>
+            </ul>
+            
+          </div>
+          <div class="details col-md-6">
+            <h3 class="product-title"><%= @photo.caption %></h3>
+            <div class="rating">
+              <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <span class="review-no">41 reviews</span>
+            </div>
+            <p class="product-description">
+              ここには投稿者が書いた作品に対してのコメントが書かれます。</br>
+              ここには投稿者が書いた作品に対してのコメントが書かれます。</br>
+              ここには投稿者が書いた作品に対してのコメントが書かれます。</br>
+              ここには投稿者が書いた作品に対してのコメントが書かれます。</br>
+            </p>
+            <h4 class="price">current price: <span>$180</span></h4>
+            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+            <h5 class="colors">タグ：
+              <span>自由制作</span>
+              <span>三年プロダクト</span>
+              <span>三年スペース</span>
+            </h5>
+            <div class="action">
+              <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+              <% if user_signed_in? && @photo.user == current_user %>
+                <%= link_to 'Edit', edit_photo_path(@photo), :class =>"like btn btn-default" %>
+                <%= link_to 'Destroy', @photo, method: :delete, data: { confirm: '本当に消去しますか？' }, :class =>"like btn btn-default" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- コメント表示 -->
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="page-header">コメント</h2>
+      <section class="comment-list">
+        <!-- First Comment -->
+        <article class="row">
+          <div class="col-md-2 col-sm-2 hidden-xs">
+            <figure class="thumbnail">
+              <img class="img-responsive" src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg" />
+              <figcaption class="text-center">morimiya</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-10 col-sm-10">
+            <div class="panel panel-default arrow left">
+              <div class="panel-body">
+                <header class="text-left">
+                  <div class="comment-user"><i class="fa fa-user"></i> morimiya</div>
+                  <time class="comment-date"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
+                </header>
+                <div class="comment-post">
+                  <p>
+                    この作品はとても良いね、びっくりしたよ。これは今すぐにでもニューヨーク現代美術館に寄贈したいくらいの出来だね。
+                  </p>
+                </div>
+                <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> 返信する</a></p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+
+  <!-- コメント入力欄 -->
+  <div class="row">
+    <% @comments.each do |comment| %>
+      <div>
+        <strong><%= comment.user.user_name %></strong>
+        <br />
+        <p><%= comment.body %></p>
+        <% if user_signed_in? && comment.user == current_user %>
+          <p><%= link_to 'Delete', comment_path(comment), method: :delete %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="col-lg-12">
+     <div class="well well-lg">
+        <div class="media-body">                                                
+          <div class="form-group" style="padding:12px;">
+            <%= render 'comments/form' %>
+          </div>             
+        </div>
+      </div>
+    </div> 
+  </div>
+
+
+
+
+
