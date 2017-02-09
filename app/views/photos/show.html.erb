@@ -60,6 +60,7 @@
 
 
   <!-- コメント表示 -->
+  <% @comments.each do |comment| %>
   <div class="row">
     <div class="col-md-8">
       <h2 class="page-header">コメント</h2>
@@ -69,22 +70,23 @@
           <div class="col-md-2 col-sm-2 hidden-xs">
             <figure class="thumbnail">
               <img class="img-responsive" src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg" />
-              <figcaption class="text-center">morimiya</figcaption>
+              <figcaption class="text-center"><%= comment.user.username %></figcaption>
             </figure>
           </div>
           <div class="col-md-10 col-sm-10">
             <div class="panel panel-default arrow left">
               <div class="panel-body">
                 <header class="text-left">
-                  <div class="comment-user"><i class="fa fa-user"></i> morimiya</div>
+                  <div class="comment-user"><i class="fa fa-user"></i> <%= comment.user.username %></div>
                   <time class="comment-date"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
                 </header>
                 <div class="comment-post">
                   <p>
-                    この作品はとても良いね、びっくりしたよ。これは今すぐにでもニューヨーク現代美術館に寄贈したいくらいの出来だね。
+                    <%= comment.body %>
                   </p>
                 </div>
-                <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> 返信する</a></p>
+                <!-- <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> 返信する</a></p> -->
+                <p class="text-right"><%= link_to 'Delete', comment_path(comment), method: :delete %></p>
               </div>
             </div>
           </div>
@@ -92,20 +94,22 @@
       </section>
     </div>
   </div>
+  <% end %>
 
 
   <!-- コメント入力欄 -->
   <div class="row">
-    <% @comments.each do |comment| %>
+<!--     <% @comments.each do |comment| %>
       <div>
         <strong><%= comment.user.user_name %></strong>
         <br />
         <p><%= comment.body %></p>
+        <%= comment.user.username %>
         <% if user_signed_in? && comment.user == current_user %>
           <p><%= link_to 'Delete', comment_path(comment), method: :delete %></p>
         <% end %>
       </div>
-    <% end %>
+    <% end %> -->
 
     <div class="col-lg-12">
      <div class="well well-lg">
