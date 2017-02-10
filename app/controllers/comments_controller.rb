@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'コメントを投稿しました。' }
+        format.html { redirect_to :back, notice: 'コメントを投稿しました。' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'コメントを編集しました。' }
+        format.html { redirect_to photos_url, notice: 'コメントを編集しました。' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'コメントを消去しました。' }
+      format.html { redirect_to :back, notice: 'コメントを消去しました。' }
       format.json { head :no_content }
     end
   end
