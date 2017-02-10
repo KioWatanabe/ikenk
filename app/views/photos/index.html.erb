@@ -1,4 +1,4 @@
-
+<p id="notice"><%= notice %></p>
 
 
   <div class="row">
@@ -7,7 +7,8 @@
         <!-- **画像** -->
         <!-- <%= image_tag photo.image.url %> -->
         <%= image_tag photo.image_url(:thumb) %></br></br>
-        <div style="font-size:20px;"><%= photo.caption %></div></br>
+        <div style="font-size:20px;"><%= photo.caption %><%= photo.description %></div></br>
+        <%= photo.description %>
         <!-- **選択エリア** -->
         <%= link_to '画像を見る', photo %>
 
