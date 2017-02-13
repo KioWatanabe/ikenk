@@ -42,7 +42,7 @@
             <h1>アカウント作成</h1>
             <%= f.text_field :username, autofocus: true, :placeholder => "ユーザー名を入力してください", :class => "input pass" %>
             <!-- <input name="user[name]" type="text" placeholder="ユーザー名を決めてください" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required" class="input pass"/> -->
-            <%= f.file_field :user_image,  :class => "input pass" %>
+            <%= f.file_field :avatar_url,  :class => "input pass" %>
             <%= f.email_field :email, autofocus: true, required: true, :placeholder => "メールアドレスを入力してください", :class => "input pass" %>
             <!-- <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass"/> -->
             <%= f.password_field :password, autocomplete: "off", required: true, :placeholder => "パスワードを入力してください (6文字以上)", :class => "input pass" %></%>

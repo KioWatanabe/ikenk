@@ -1,62 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-
   <div class="row">
     <% @photos.each do |photo| %>
-      <div class="col-md-3 col-xs-6">
-        <!-- **画像** -->
-        <!-- <%= image_tag photo.image.url %> -->
-        <%= image_tag photo.image_url(:thumb) %></br></br>
-        <div style="font-size:20px;"><%= photo.caption %><%= photo.description %></div></br>
-        <%= photo.description %>
-        <!-- **選択エリア** -->
-        <%= link_to '画像を見る', photo %>
-
-        <!-- **画像を投稿したユーザー** -->
-        <% if user_signed_in? %>
-          <!-- <%= image_tag current_user.avatar_url %>
-          <%= current_user.user_name %> -->
-          <%= photo.user.username %>
-        <% end %>
+      <div class="col-md-4 col-xs-6">
+      <%= link_to photo, class: "photo_class" do %>
+        <article class="g_area">
+          <div class="img_area">
+            <%= image_tag photo.image_url(:thumb) %>
+          </div>
+          <div class="text_area">
+            <div class="top clearfix">
+              <div class="title">
+                <%= photo.caption %>
+              </div>
+            </div>
+            <div class="bottom clearfix">
+              <div class="name">
+                <% if user_signed_in? %>
+                  <%= image_tag current_user.avatar_url %>
+                  <%= photo.user.username %>
+                <% end %>
+              </div>
+              <div class="link">
+              
+              </div>
+            </div>
+          </div>
+        </article>
+      <% end %>
       </div><!--/.col-md-3 col-xs-6-->
     <% end %>
   </div><!--/.row-->
-
-
-  <br>
-
-<!--   <% if user_signed_in? %>
-    <p><%= link_to '画像を投稿する', new_photo_path %></p>
-  <% end %> -->
-
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Caption</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @photos.each do |photo| %>
-      <tr>
-        <td><%= photo.image %></td>
-        <td><%= image_tag photo.image.url %></td>
-        <td><%= photo.caption %></td>
-
-        <td><%= link_to '画像を見る', photo %></td>
-        <td><%= link_to '編集', edit_photo_path(photo) %></td>
-        <td><%= link_to '消去', photo, method: :delete, data: { confirm: '本当に消去しますか？' } %></td>
-        <td>
-            <% if user_signed_in? %>
-              <%= image_tag current_user.avatar_url %>
-              <%= current_user.user_name %>
-            <% end %>
-        </td>
-      </tr>
-
-    <% end %>
-  </tbody>
-</table> -->

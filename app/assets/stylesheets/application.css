@@ -497,7 +497,6 @@ footer p{
 /********************
   各種作品ページ
 *********************/
-/*****************globals*************/
 img {
   max-width: 100%; }
 .preview {
@@ -543,7 +542,6 @@ img {
             animation-name: opacity;
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
-
 .card {
   margin-top: 50px;
   background: #eee;
@@ -654,11 +652,50 @@ img {
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1); } }
-
-/*# sourceMappingURL=style.css.map */
-
-
-
+/********************
+  ギャラリー部分
+*********************/
+.g_area{
+  width: 100%;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.09);
+  background-color: #f0f0f0;
+  margin-bottom: 25px;
+}
+.g_area .text_area{
+  padding-top: 10px;
+}
+.g_area .text_area a{
+  text-decoration: none;
+}
+.g_area .text_area .top .title{
+  font-size: 1.3rem;
+  font-weight: 200;
+}
+.g_area .text_area .bottom{
+  padding-top: 5px;
+}
+.g_area .text_area .bottom .name{
+  font-size: 0.9rem;
+  color: #666;
+  float: left;
+}
+.g_area .text_area .bottom .link{
+  font-size: 0.9rem;
+  color: #666;
+  float: right;
+}
+@media screen and (max-width:600px) {
+  .g_area{
+    padding: 5px;
+    margin-bottom: 15px;
+  }
+  .g_area .text_area{
+    display: none; 
+  }
+}
 
 
 
