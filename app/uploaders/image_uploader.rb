@@ -16,7 +16,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # ギャラリーの作品のサムネイル部分
    version :thumb do
-     process :resize_to_fill => [200, 200, gravity = ::Magick::CenterGravity]
+     process :resize_to_fill => [370, 277, gravity = ::Magick::CenterGravity]
    end
 
   # 作品ページの部分の画像の大きさ
