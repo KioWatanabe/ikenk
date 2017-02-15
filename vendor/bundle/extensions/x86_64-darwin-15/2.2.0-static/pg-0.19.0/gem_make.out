@@ -1,5 +1,5 @@
 current directory: /Users/kiokiokio20/git/ikenk/vendor/bundle/gems/pg-0.19.0/ext
-/Users/kiokiokio20/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20170215-9168-1l3ysun.rb extconf.rb
+/Users/kiokiokio20/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20170215-12136-17yqnzt.rb extconf.rb
 checking for pg_config... yes
 Using config values from /usr/local/bin/pg_config
 checking for libpq-fe.h... yes
@@ -75,4 +75,4 @@ linking shared-object pg_ext.bundle
 
 current directory: /Users/kiokiokio20/git/ikenk/vendor/bundle/gems/pg-0.19.0/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20170215-9168-1esjgky
+/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20170215-12136-4ftzw6
