@@ -33,6 +33,12 @@ gem 'rmagick'
 gem 'devise'
 gem 'omniauth-twitter'
 
+# タグ機能実装
+gem 'acts-as-taggable-on', '~> 3.4'
+
+# 管理画面の実装
+gem 'rails_admin'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
