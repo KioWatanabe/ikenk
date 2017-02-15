@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   has_many :photos
 
+  
+
 
   def self.find_or_create_from_oauth(auth)
     User.find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
