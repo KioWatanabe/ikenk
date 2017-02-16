@@ -1,0 +1,22 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "heroku"]
+	url = https://git.heroku.com/ikenk.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = heroku
+	merge = refs/heads/master
+[branch "develop-"]
+	remote = origin
+	merge = refs/heads/develop-
+[branch "feature-admin"]
+	remote = origin
+	merge = refs/heads/feature-admin
+[branch "test"]
+	remote = heroku
+	merge = refs/heads/test
