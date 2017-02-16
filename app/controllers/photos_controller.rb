@@ -8,6 +8,7 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.all
     @photos = Photo.order("Created_at DESC")
+
   end
 
   # GET /photos/1
@@ -16,6 +17,10 @@ class PhotosController < ApplicationController
     @photo = Photo.includes(:user).find(params[:id])
     @comments = @photo.comments.includes(:user).all
     @comment  = @photo.comments.build(user_id: current_user.id) if current_user
+
+    impressionist(@photo, nil, :unique => [:session_hash])
+    @page_views = @photo.impressionist_count
+
   end
 
   # GET /photos/new

@@ -79,6 +79,8 @@ GEM
       hirb (~> 0.5)
       unicode-display_width (~> 0.1.1)
     i18n (0.8.0)
+    impressionist (1.5.2)
+      nokogiri (~> 1.6)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -231,6 +233,7 @@ DEPENDENCIES
   devise
   hirb
   hirb-unicode
+  impressionist (~> 1.5.1)
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-twitter
