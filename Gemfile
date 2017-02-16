@@ -36,6 +36,9 @@ gem 'rmagick'
 gem 'devise'
 gem 'omniauth-twitter'
 
+#ページビュー数のトラッキングを行うためのgem
+gem 'impressionist', '~> 1.5.1'
+
 # タグ機能実装
 gem 'acts-as-taggable-on', '~> 3.4'
 
