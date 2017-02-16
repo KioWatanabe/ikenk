@@ -2,10 +2,12 @@ class PhotosController < ApplicationController
   before_action :login_check, only: [:new, :edit, :update, :destroy]
   before_action :set_current_user_photo, only: [:edit, :update, :destroy]
 
+
   # GET /photos
   # GET /photos.json
   def index
     @photos = Photo.all
+    @photos = Photo.order("Created_at DESC")
   end
 
   # GET /photos/1
