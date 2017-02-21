@@ -7,6 +7,10 @@ gem 'rails', '4.2.3'
 # gem 'sqlite3'
 gem 'sqlite3', group: :development
 # 本番ではpostgressを使用する
+<<<<<<< HEAD
+=======
+# gem 'pg', group: :production
+>>>>>>> master
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 

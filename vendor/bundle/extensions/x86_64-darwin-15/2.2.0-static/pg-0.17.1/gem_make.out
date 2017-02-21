@@ -1,5 +1,9 @@
 current directory: /Users/kiokiokio20/git/ikenk/vendor/bundle/gems/pg-0.17.1/ext
+<<<<<<< Updated upstream
 /Users/kiokiokio20/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20170222-14870-1oj1jl8.rb extconf.rb
+=======
+/Users/kiokiokio20/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20170222-14418-9npn57.rb extconf.rb
+>>>>>>> Stashed changes
 checking for pg_config... yes
 Using config values from /usr/local/bin/pg_config
 checking for libpq-fe.h... yes
@@ -59,4 +63,8 @@ linking shared-object pg_ext.bundle
 
 current directory: /Users/kiokiokio20/git/ikenk/vendor/bundle/gems/pg-0.17.1/ext
 make "DESTDIR=" install
+<<<<<<< Updated upstream
 /usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20170222-14870-18lsrkk
+=======
+/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20170222-14418-dgcdiz
+>>>>>>> Stashed changes
