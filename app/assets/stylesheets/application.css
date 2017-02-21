@@ -376,7 +376,7 @@ footer p{
   top_index
 *********************/
 #top_index{
-  padding: 140px 0;
+  padding: 200px 0;
 }
 #top_index .right{
   text-align: center;
@@ -591,7 +591,7 @@ img {
           flex-grow: 1; }
 
 .product-title, .price, .sizes, .colors {
-  text-transform: UPPERCASE;
+  /*text-transform: UPPERCASE;*/
   font-weight: bold; }
 
 .checked, .price span {
