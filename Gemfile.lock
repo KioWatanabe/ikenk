@@ -243,13 +243,13 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-twitter
-  pg (= 0.17.1)
+  pg
   pry
   pry-byebug
   pry-doc
   pry-rails
   rails (= 4.2.3)
-  rails_12factor (= 0.0.2)
+  rails_12factor
   rails_admin
   rmagick
   sass-rails (~> 5.0)
