@@ -19,6 +19,7 @@ class [scope]::RegistrationsController < Devise::RegistrationsController
     render :edit
   end
  end
+ 
 
    protected
  
