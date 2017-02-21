@@ -7,7 +7,12 @@ gem 'rails', '4.2.3'
 # gem 'sqlite3'
 gem 'sqlite3', group: :development
 # 本番ではpostgressを使用する
-gem 'pg', group: :production
+# gem 'pg', group: :production
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
