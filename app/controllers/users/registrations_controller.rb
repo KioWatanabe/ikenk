@@ -30,7 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def user_params
     params.require(:user).permit(:name, :email, :profile, :image)
   end
-end
+
   # GET /resource/sign_up
   # def new
   #   super
